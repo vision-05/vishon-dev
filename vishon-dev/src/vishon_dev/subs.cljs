@@ -11,3 +11,13 @@
  ::items
  (fn [db]
    (:items db)))
+
+(re-frame/reg-sub
+ ::cur-page
+ (fn [db]
+   (:cur-page db)))
+
+(re-frame/reg-sub
+ ::pages
+ (fn [db]
+   (:pages db)))
