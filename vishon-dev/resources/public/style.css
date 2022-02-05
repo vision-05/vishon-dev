@@ -1,5 +1,20 @@
-div, h1, input {
+div {
+    background-color: #cccccc;
     text-align: center;
+    overflow: hidden;
+    margin: auto;
+    max-width: 1000px;
+}
+
+h1, input {
+    text-align: center;
+    font-family: HelveticaNeue, Helvetica;
+    color: #000000;
+}
+
+p {
+    margin: 3px;
+    text-align: left;
     font-family: HelveticaNeue, Helvetica;
     color: #000000;
 }
@@ -17,7 +32,7 @@ button {
     background-color: #222222;
     color: #dddddd;
     border-radius: 5px;
-    border: 2px solid #aabbaa;
+    border: 2px solid #aaaaaa;
     display: inline-block;
     text-align: center;
     font-size: 20px;
@@ -27,7 +42,7 @@ button:hover {
     background-color: #444444;
     color: #bbbbbb;
     border-radius: 5px;
-    border: 2px solid #aabbaa;
+    border: 2px solid #aaaaaa;
     display: inline-block;
     text-align: center;
     font-size: 20px;

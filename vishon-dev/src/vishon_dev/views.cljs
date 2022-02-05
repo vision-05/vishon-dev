@@ -7,10 +7,9 @@
 (defn nav-bar []
   (let [items @(re-frame/subscribe [::subs/items])]
     [:div
-     (vec (cons :ul (map #(do [:button %]) items)))]))
+     (vec (cons :ul (map #(do [:button {:on-click (fn [] (re-frame/dispatch [:vishon-dev.events/change-page (keyword %)]))} %]) items)))]))
 
 (defn main-panel []
-  (let [name @(re-frame/subscribe [::subs/name])]
-    [:div
-     [nav-bar]
-     [:h1 "Hi, I'm vishon"]]))
+  (let [cur-page @(re-frame/subscribe [::subs/cur-page])
+        pages @(re-frame/subscribe [::subs/pages])]
+    (cur-page pages)))
