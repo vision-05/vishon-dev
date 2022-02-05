@@ -1,0 +1,1 @@
+{"version":3,"sources":["vishon_dev/config.cljs"],"mappings":";AAEA,AAAKA,iCACMC","names":["vishon-dev.config/debug?","js/goog.DEBUG"],"sourcesContent":["(ns vishon-dev.config)\n\n(def debug?\n  ^boolean goog.DEBUG)\n"]}
