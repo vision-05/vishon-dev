@@ -4,6 +4,9 @@
    [vishon-dev.db :as db]
    ))
 
+(defn change-page [db [_ page]]
+  (assoc db :cur-page page))
+
 (re-frame/reg-event-db
  ::initialize-db
  (fn [_ _]
@@ -11,5 +14,4 @@
 
 (re-frame/reg-event-db
  ::change-page
- (fn [db [_ page]]
-   (assoc db :cur-page page)))
+ change-page)
