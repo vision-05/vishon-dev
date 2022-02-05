@@ -23,7 +23,6 @@ p {
 }
 
 ul {
-    display: inline-block;
     list-style-type: none;
 }
 
@@ -32,12 +31,14 @@ button {
     color: #4f4f4f;
     text-align: center;
     font-size: 20px;
+    padding: 10px;
+    border: none;
 }
 
 button:hover {
     background-color: #444444;
     color: #bbbbbb;
-    display: inline-block;
     text-align: center;
     font-size: 20px;
+    border: none;
 }
