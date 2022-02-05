@@ -15,7 +15,6 @@ pom.xml.asc
 *.ignore
 
 /out/
-/resources/public/js/compiled/
 /target/
 /*-init.clj
 /*.log
