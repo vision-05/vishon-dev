@@ -8,6 +8,7 @@
  [[reagent "1.1.0"]
   [re-frame "1.2.0"]
   [cljsjs/firebase "7.5.0-0"]
+  [cljsjs/react-dom "18.0.0-rc.0-0"]
   [markdown-to-hiccup "0.6.2"]
   [binaryage/devtools "1.0.3"]]
 
