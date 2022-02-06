@@ -21,3 +21,13 @@
  ::pages
  (fn [db]
    (:pages db)))
+
+(re-frame/reg-sub
+ ::blog-posts
+ (fn [db]
+   (:blog-posts db)))
+
+(re-frame/reg-sub
+ ::project-posts
+ (fn [db]
+   (:project-posts db)))
