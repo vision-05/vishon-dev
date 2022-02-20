@@ -24,7 +24,7 @@ ul.navbar {
 ul.blogpost {
     display: flex;
     flex-flow: column wrap;
-    width: 60%;
+    width: 90%;
     margin: 10px auto;
     background-color: #cacaca;
     border-radius: 5px;
@@ -65,6 +65,16 @@ ul {
     list-style-type: none;
 }
 
+button.link {
+    background-color: #cacaca;
+    color: #4f8f8f;
+}
+
+button.link:hover {
+    background-color: #cacaca;
+    color: #4f6f8f;
+}
+
 button {
     background-color: #cccccc;
     color: #4f4f4f;
@@ -72,7 +82,7 @@ button {
     font-size: 20px;
     padding: 20px;
     border: none;
-    cursor: grab;
+    cursor: auto;
 }
 
 button:hover {

@@ -4,12 +4,23 @@
    [vishon-dev.subs :as subs]
    [markdown-to-hiccup.core :as md]))
 
+(defn get-hiccup-el [hic el]
+  (md/hiccup-in hic :html :body el))
+
 (defn content-to-component [content] ;;convert components to edn
   (vec (cons :ul.blogpost [(md/hiccup-in (md/md->hiccup content) :html :body)])))
 
-(defn content-list [type]
+(defn content-to-preview [content]
+  (let [hic (md/md->hiccup content)]
+    (vec (cons :ul.blogpost [(get-hiccup-el hic :h1) (get-hiccup-el hic :h2) [:button.link "read more..."]]))))
+
+(defn content-list [type md->hic]
   (let [content @(re-frame/subscribe [type])]
-    (vec (cons :ul [(map content-to-component content)]))))
+    (vec (cons :ul [(map ({:preview content-to-preview :full content-to-component} md->hic) content)]))))
+
+(defn content-preview [type] ;;merge with `content-list` function
+  (let [content @(re-frame/subscribe [type])]
+    (vec (cons :ul [(map content-to-preview content)]))))
 
 (defn nav-bar []
   (let [items @(re-frame/subscribe [::subs/items])]

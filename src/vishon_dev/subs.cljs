@@ -30,4 +30,9 @@
 (re-frame/reg-sub
  ::project-posts
  (fn [db]
-   (:project-posts db)))
+   (:projects db)))
+
+(re-frame/reg-sub
+ ::app
+ (fn [db]
+   (:app db)))
