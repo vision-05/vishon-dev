@@ -24,7 +24,7 @@
 
 (defn get-db! [reference key] ;;use correct get stuff
   (js/console.log reference key (keyword key))
-  (fbdb/onValue (fbdb/child reference key) (fn [snap] (rf/dispatch [:vishon-dev.events/update-content
+  (fbdb/onValue (fbdb/child reference key) (fn [^fbdb/DataSnapshot snap] (rf/dispatch [:vishon-dev.events/update-content
                                                                    (keyword key)
                                                                    (js->clj (.val snap))]))))
 
