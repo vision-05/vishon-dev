@@ -19,8 +19,7 @@
 (re-frame/reg-event-fx ;;change to event fx that gets content from firebase
  ::initialize-db
  (fn [_ _]
-   {:db db/default-db
-    :firebase/get {:db-key "projects"}}))
+   {:db db/default-db}))
 
 (re-frame/reg-event-fx
  ::change-page
