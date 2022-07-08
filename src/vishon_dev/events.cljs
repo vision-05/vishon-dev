@@ -14,6 +14,7 @@
         new-ctx)))
 
 (defn update-content [db [_ k v]]
+  (js/console.log v)
   (assoc db k v))
 
 (re-frame/reg-event-fx ;;change to event fx that gets content from firebase

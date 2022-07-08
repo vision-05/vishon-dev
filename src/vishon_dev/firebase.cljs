@@ -8,7 +8,7 @@
   (firebase/initializeApp
    #js {:apiKey "AIzaSyDDCJtpq9CjLLxgjydwowUpphmmEa5AVW8"
         :authDomain "vishon-portfolio.firebaseapp.com"
-        :databaseURL "vishon-portfolio-default-rtdb.europe-west1.firebasedatabase.app/"
+        :databaseURL "http://localhost:9000?ns=vishon-portfolio" ;;use mockDB for dev
         :projectId "vishon-portfolio"
         :storageBucket "vishon-portfolio.appspot.com"
         :messagingSenderId "944467502028"
@@ -16,7 +16,7 @@
 
 ;;find out db data type
 
-(defn db-reference [] ;;make sure to use correct refs
+(defn db-reference [] ;;maybe store ref in global state
   (fbdb/ref (fbdb/getDatabase @(rf/subscribe [:vishon-dev.subs/app]))))
 
 (defn set-db! [reference val]
