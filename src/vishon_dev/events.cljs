@@ -7,7 +7,7 @@
    [clojure.string :as str]))
 
 (defn is-content-page? [p]
-  (or (= p "projects") (= p "blog-posts")))
+  (or (= p "project-posts") (= p "blog-posts")))
 
 (defn change-page [ctx [_ page]]
   (let [nm (name page)
