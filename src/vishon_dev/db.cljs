@@ -6,10 +6,10 @@
 (def default-db
   {:name "re-frame"
    :app (fb/init)
-   :items ["home" "projects" "blog-posts" "contact"]
+   :items ["home" "project-posts" "blog-posts" "contact"]
    :cur-page :home
    :pages {:home [:div [views/nav-bar] [:h1.page "Hi, I'm vishon"]]
-           :projects [:div [views/nav-bar] [:h1.page "My projects"] [views/content-preview-list ::subs/project-posts]]
+           :project-posts [:div [views/nav-bar] [:h1.page "My projects"] [views/content-preview-list ::subs/project-posts]]
            :blog-posts [:div [views/nav-bar] [:h1.page "My Blog"] [views/content-preview-list ::subs/blog-posts]]
            :open-post [:div [views/nav-bar] [views/content-to-component ::subs/open-post]]
            :contact [:div [views/nav-bar] [:h1.page "Contact me"]]}
