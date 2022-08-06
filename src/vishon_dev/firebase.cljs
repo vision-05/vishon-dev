@@ -8,7 +8,7 @@
   (firebase/initializeApp
    #js {:apiKey "AIzaSyDDCJtpq9CjLLxgjydwowUpphmmEa5AVW8"
         :authDomain "vishon-portfolio.firebaseapp.com"
-        :databaseURL "http://localhost:9000?ns=vishon-portfolio" ;;use mockDB for dev
+        :databaseURL "http://localhost:9000" ;;use mockDB for dev
         :projectId "vishon-portfolio"
         :storageBucket "vishon-portfolio.appspot.com"
         :messagingSenderId "944467502028"
