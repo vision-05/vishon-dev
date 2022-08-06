@@ -8,17 +8,17 @@
   (md/hiccup-in hic :html :body el))
 
 (defn content-to-component [content] ;;convert components to edn
-  (vec (cons :ul.blogpost [(md/hiccup-in (md/md->hiccup content) :html :body)])))
+  (let [ctn @(re-frame/subscribe [content])]
+    (md/hiccup-in (md/component (md/md->hiccup ctn)))))
 
 (defn content-to-preview [content]
-  (let [hic (md/md->hiccup content)]
-    (vec (cons :ul.blogpost [(get-hiccup-el hic :h1) (get-hiccup-el hic :h2) [:button.link "read more..."]]))))
+  (let [hic (md/md->hiccup content)
+        title (get-hiccup-el hic :h1)]
+    (vec (cons :ul.blogpost [title (get-hiccup-el hic :h2) [:button.link
+                                                            {:on-click (fn [] (re-frame/dispatch [:vishon-dev.events/open-post content]))}
+                                                            "read more..."]]))))
 
-(defn content-list [type md->hic]
-  (let [content @(re-frame/subscribe [type])]
-    (vec (cons :ul [(map ({:preview content-to-preview :full content-to-component} md->hic) content)]))))
-
-(defn content-preview [type] ;;merge with `content-list` function
+(defn content-preview-list [type]
   (let [content @(re-frame/subscribe [type])]
     (vec (cons :ul [(map content-to-preview content)]))))
 

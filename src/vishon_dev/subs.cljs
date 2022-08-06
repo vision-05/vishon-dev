@@ -30,7 +30,12 @@
 (re-frame/reg-sub
  ::project-posts
  (fn [db]
-   (:projects db)))
+   (:project-posts db)))
+
+(re-frame/reg-sub
+ ::open-post
+ (fn [db]
+   (:open-post db)))
 
 (re-frame/reg-sub
  ::app
