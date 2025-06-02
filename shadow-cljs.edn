@@ -7,7 +7,9 @@
   [re-frame "1.2.0"]
   [cljsjs/react-dom "18.0.0-rc.0-0"]
   [markdown-to-hiccup "0.6.2"]
-  [binaryage/devtools "1.0.3"]]
+  [binaryage/devtools "1.0.3"]
+  [cljs-ajax "0.8.4"]
+  [day8.re-frame/http-fx "0.2.4"]]
 
  :dev-http
  {8280 "resources/public"

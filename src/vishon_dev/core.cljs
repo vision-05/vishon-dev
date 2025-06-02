@@ -6,8 +6,13 @@
    [vishon-dev.events :as events]
    [vishon-dev.views :as views]
    [vishon-dev.config :as config]
-   ))
+   [day8.re-frame.http-fx]))
 
+
+(defn start-tick []
+  (js/setInterval
+    #(re-frame/dispatch [:vishon-dev.events/get-sensors])
+    1000))
 
 (defn dev-setup []
   (when config/debug?
@@ -21,5 +26,6 @@
 
 (defn init []
   (re-frame/dispatch-sync [::events/initialize-db])
+  (start-tick)
   (dev-setup)
   (mount-root))

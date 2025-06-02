@@ -41,3 +41,48 @@
  ::app
  (fn [db]
    (:app db)))
+
+(re-frame/reg-sub
+  ::ipaddr
+  (fn [db]
+    (:ipaddr db)))
+
+(re-frame/reg-sub
+  ::port
+  (fn [db]
+    (:port db)))
+
+(re-frame/reg-sub
+  ::stream
+  (fn [db]
+    (:stream db)))
+
+(re-frame/reg-sub
+  ::sensors
+  (fn [db]
+    (:sensors db)))
+
+(re-frame/reg-sub
+  ::auth
+  (fn [db]
+    (:auth db)))
+
+(re-frame/reg-sub
+  ::provider
+  (fn [db]
+    (:provider db)))
+
+(re-frame/reg-sub
+  ::p
+  (fn [db]
+    (:p db)))
+
+(re-frame/reg-sub
+  ::i
+  (fn [db]
+    (:i db)))
+
+(re-frame/reg-sub
+  ::d
+  (fn [db]
+    (:d db)))

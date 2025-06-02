@@ -40,7 +40,7 @@ h1.page, h2.page {
     border: none;
 }
 
-h1, input { /*Give markdown text own classes, clean this up*/
+h1 { /*Give markdown text own classes, clean this up*/
     margin: 0 0 10px 0;
     padding: 20px 5px;
     background: #bbbbbb;
@@ -55,7 +55,7 @@ h2 {
     color: #4f4f4f;
 }
 
-p {
+p, label {
     margin: 3px;
     text-align: center;
     color: #4f4f4f;
@@ -87,9 +87,136 @@ button {
 }
 
 button:hover {
-    background-color: #444444;
-    color: #bbbbbb;
+    background-color: #e5c6c6;
     text-align: center;
     font-size: 20px;
     border: none;
+    transition: background-color 0.2s ease;
+}
+
+button.robotcontrol {
+	background-color: #dddddd;
+    	color: #4f4f4f;
+    	text-align: center;
+    	font-size: 20px;
+    	padding: 20px;
+    	border: none;
+    	cursor: auto;
+}
+
+button.robotcontrol:hover {
+    background-color: #fadea8;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+button.field {
+	background-color: #dddddd;
+	margin: 2px;
+	padding: 5px;
+	width: 20px;
+	text-align: center;
+}
+
+button.field:hover {
+	background-color: #fadea8;
+}
+
+input {
+	background-color: #bbbbbb; 
+	box-shadow: none;
+	border-style: solid;
+	border-color: #bbbbbb;
+	border-bottom: 2px solid #bbbbbb;
+	margin: 5px;
+}
+
+input.robotcontrol {
+	background-color: #dddddd;
+	border-style: solid;
+	border-color: #dddddd;
+	border-bottom: 2px solid #dddddd;
+	outline: none;
+}
+
+input:focus {
+	border-style: solid;
+	border-color: #bbbbbb;
+	border-bottom: 2px solid #e5c6c6;
+	outline: none;
+}
+
+input.robotcontrol:focus {
+	border-style: solid;
+	border-color: #dddddd;
+	border-bottom: 2px solid #e5c6c6;
+}
+
+input:hover {
+	border-style: solid;
+	border-color: #bbbbbb;
+	border-bottom: 2px solid #f6d7d7;
+	outline: none;
+	transition: border-bottom 0.2s ease;
+}
+
+input.robotcontrol:hover {
+	border-style: solid;
+	border-color: #dddddd;
+	border-bottom: 2px solid #f6d7d7;
+	outline: none;
+	transition: border-bottom 0.2s ease;
+}
+
+div.robotcontrols {
+	border-radius: 10px;
+	background-color: #f0cca8;
+	width: 50%;
+	padding-bottom: 5px;	
+}
+
+div.robot {
+	width: 70%;
+	align: center;
+	margin: auto;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 200px 300px 200px;
+	grid-template-rows: 100px 100px 100px 100px 100px;
+}
+
+div.sensor {
+	background-position: center;
+	background-size: 100px;
+	height: 70;
+	width: 100;
+	text-align: center;
+	margin: 10px;
+	display: grid;
+
+}
+
+div.sensor.ref {
+	background-color: #53dfdf;
+}
+
+div.sensor.dist {
+	background-color: #aaaaaa;
+}
+
+label.sname {
+	height: 50;
+	width: 100;
+	margin-top: 50px;
+}
+
+label.sdata {
+	height: 20;
+	width: 100;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: #dddddd;
 }
