@@ -121,6 +121,8 @@
   (fn [db [_ v k]]
     (assoc db (keyword k) v)))
 
+;;event for getting log
+
 (re-frame/reg-event-fx
   ::stop-button
   (fn [db [_ ip port]]
@@ -133,9 +135,11 @@
 (re-frame/reg-event-db
   ::update-sensors
   (fn [db [_ result]]
-    (let [ctx (assoc db :sensors result)]
-      (println "u")
-      ctx)))
+    (let [old-log (:log db)
+          ctx (assoc db :sensors result)
+          new-ctx (assoc ctx :log (:log (:sensors ctx)))]
+      (println new-ctx)
+      new-ctx)))
 
 (re-frame/reg-event-db
   ::fail-sensors

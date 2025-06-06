@@ -86,3 +86,8 @@
   ::d
   (fn [db]
     (:d db)))
+
+(re-frame/reg-sub
+  ::log
+  (fn [db]
+    (:log db)))

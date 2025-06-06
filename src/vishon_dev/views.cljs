@@ -53,21 +53,31 @@
 
 (defn robot-sim []
   [:div.robot
-   [:label ""]
+   (dist-sensor :distb)
    (dist-sensor :distf)
    [:label ""]
-   [:label ""]
+   (ref-sensor :ref5)
    (ref-sensor :ref1)
-   [:label ""]
-   [:label ""]
-   (ref-sensor :ref2)
-   [:label ""]
+   (ref-sensor :ref4)
    (dist-sensor :distl)
-   (ref-sensor :ref3)
+   (ref-sensor :ref2)
    (dist-sensor :distr)
    [:label ""]
-   (dist-sensor :distb)
+   (ref-sensor :ref3)
+   [:label ""]
+   [:label ""]
+   [:label ""]
    [:label ""]])
+
+(defn robot-log []
+  (let [log @(re-frame/subscribe [::subs/log])]
+    [:div
+     [:text-area log]]))
+
+(defn servo-controls [id]
+  (let [ip @(re-frame/subscribe [::subs/ipaddr])
+        port @(re-frame/subscribe [::subs/port])]
+    [:button.robotcontrol {:on-click (fn [] (re-frame/dispatch [:vishon-dev.events/servo ip port id]))} (str "Activate " id)]))
 
 (defn kill-switch []
   (let [ip @(re-frame/subscribe [::subs/ipaddr])
@@ -134,4 +144,5 @@
    [:ul
     [const-field "p"]
     [const-field "i"]
-    [const-field "d"]]])
+    [const-field "d"]]
+   [robot-log]])

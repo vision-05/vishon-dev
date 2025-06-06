@@ -21,4 +21,4 @@
    :blog-posts []
    :project-posts []
    :open-post []
-   :sensors {:ref1 0 :ref2 0 :ref3 0 :distf 0 :distl 0 :distr 0 :distb 0}})
+   :sensors {:ref1 0 :ref2 0 :ref3 0 :ref4 0 :distf 0 :distl 0 :distr 0 :distb 0}})
